@@ -1,0 +1,21 @@
+{
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "target":"esnext",
+      "module":"commonjs",
+      "allowJs": true,
+      "jsx": "react-native",
+      "lib": ["es2022"],
+      "outDir": "compiled",
+      "rootDir": "src",
+      "types": ["react", "react-native", "jest"]
+    },
+    "include": ["src/**/*"],
+    "exclude": [
+        "android",
+        "ios",
+        "compiled",
+        "node_modules"
+     ]
+  }
