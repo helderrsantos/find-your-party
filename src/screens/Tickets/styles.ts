@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.View`
-  background-color: red;
+  background-color: green;
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const TitleHeader = styled.Text`
   font-size: 20px;
-  color: black;
+  color: gray;
 `;
 
 export const Button = styled.TouchableOpacity`
