@@ -1,0 +1,14 @@
+{
+    "events" : [
+      {
+        "id": "db8dbc59-250c-4614-9319-3da664927acf",
+        "eventLocal": "Shed Club",
+        "thumbnail": "https://www.bcnoticias.com.br/wp-content/uploads/2021/10/shed.jpg", 
+        "eventAttraction": "Rodrigo Valentin e banda",
+        "dateTime": "2022-12-10T22:01:08.851Z", 
+        "ticket_price": 250,
+        "description": "A Shed Club tem capacidade para festas com até 1.000 pessoas. O espaço tem uma area especifica para fumantes, salão no piso térreo e no segundo piso, além de uma fantástica vista para o mar e cozinha de apoio para eventos privativos"
+      }
+    ],
+    "user_tickets": []
+  }
