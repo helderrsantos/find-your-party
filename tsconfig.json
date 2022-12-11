@@ -8,7 +8,7 @@
       "jsx": "react-native",
       "lib": ["es2022"],
       "outDir": "compiled",
-      "types": ["react", "react-native", "jest"]
+
     },
     "include": ["src/**/*"],
     "exclude": [
