@@ -5,21 +5,20 @@ import {
   Poppins_500Medium,
   Poppins_600SemiBold,
 } from '@expo-google-fonts/poppins';
-import { Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { registerRootComponent } from 'expo';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native';
+import { ThemeProvider } from 'styled-components';
 
+import theme from './global/styles';
 import Routes from './routes';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-    Roboto_700Bold,
     Poppins_400Regular,
     Poppins_500Medium,
     Poppins_600SemiBold,
@@ -36,10 +35,15 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }} onLayout={onLayoutRootView}>
-      <Routes />
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView
+        style={{ flex: 1, backgroundColor: '#29292E' }}
+        onLayout={onLayoutRootView}
+      >
+        <Routes />
+        <StatusBar style="light" />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
 
