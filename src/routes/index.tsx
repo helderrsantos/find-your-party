@@ -17,7 +17,7 @@ function Routes() {
     <NavigationContainer>
       <NavigatorStack
         initialRouteName="Home"
-        screenOptions={{ headerShow: false }}
+        screenOptions={{ headerShown: false }}
       >
         <StackScreen name="Home" component={Home} />
         <StackScreen name="Events" component={Events} />
