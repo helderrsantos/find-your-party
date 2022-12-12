@@ -2,9 +2,11 @@ export default {
   colors: {
     black: '#1E1E1E',
 
+    gray400: '#121214',
     gray300: '#191919',
     gray200: '#202024',
     gray100: '#29292E',
+    gray50: '#7C7C8A',
 
     white200: '#E1E1E6',
     white100: '#FFFFFF',
