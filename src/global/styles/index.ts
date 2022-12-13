@@ -16,6 +16,8 @@ export default {
     green100: '#04D361',
 
     purple: '#996DFF',
+
+    red: '#C83434',
   },
   fonts: {
     text400: 'Poppins_400Regular',

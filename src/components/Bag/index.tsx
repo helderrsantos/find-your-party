@@ -12,7 +12,7 @@ export function Bag({ ...rest }: Props) {
   return (
     <HeaderMain>
       <ContactorBox>
-        <Counter>{'0'}</Counter>
+        <Counter>{'1'}</Counter>
       </ContactorBox>
       <HeaderBag {...rest}>
         <BigBag source={require('../../assets/bag.png')} />

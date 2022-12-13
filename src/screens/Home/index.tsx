@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Entypo } from '@expo/vector-icons';
+
 import { EventButton } from '../../components/EventButton';
 import { HeaderMain } from '../../components/Header';
 import {
@@ -11,7 +13,6 @@ import {
   FooterContactor,
   FooterMain,
   FooterText,
-  Ticket,
 } from './styles';
 
 export function Home({ navigation }) {
@@ -42,12 +43,12 @@ export function Home({ navigation }) {
 
       <FooterMain>
         <Footer onPress={() => navigation.navigate('Tickets')}>
-          <Ticket source={require('../../assets/ticket.png')} />
+          <Entypo name="ticket" size={18} color="green" />
           <FooterText>Meus Ingressos</FooterText>
         </Footer>
         <FooterContactor>
           <ContactorBox>
-            <Counter>{'0'}</Counter>
+            <Counter>{'1'}</Counter>
           </ContactorBox>
         </FooterContactor>
       </FooterMain>

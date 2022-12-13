@@ -6,11 +6,6 @@ export const HeaderMain = styled.View`
   width: 32px;
 `;
 
-export const Header = styled.View`
-  width: 170px;
-  background-color: ${({ theme }) => theme.colors.gray200};
-`;
-
 export const IconHeader = styled.Image`
   margin-right: 8px;
 `;

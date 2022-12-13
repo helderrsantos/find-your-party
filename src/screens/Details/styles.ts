@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex: 1;
 `;
 
-export const Box = styled.TouchableOpacity`
+export const Box = styled.Pressable`
   width: 20px;
   align-items: center;
   justify-content: center;
@@ -29,17 +29,12 @@ export const CardThumbnail = styled.ImageBackground`
   height: 199px;
   width: 100%;
 `;
-export const ImageParty = styled.View`
-  height: 199px;
-  width: 100%;
-  background-color: ${({ theme }) => theme.colors.gray200};
-`;
+export const ImageParty = styled.View``;
+
 export const Card = styled.ScrollView`
-  height: 202px;
   background-color: ${({ theme }) => theme.colors.gray200};
   border-radius: 6px;
-  margin-top: 21px;
-  padding: 0 24px;
+  margin: 0px 24px 24px 24px;
 `;
 
 export const Event = styled.Text`

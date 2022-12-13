@@ -5,9 +5,10 @@ import { IButtonProps } from '.';
 export const Container = styled.Pressable<Omit<IButtonProps, 'title'>>`
   border-radius: 6px;
   background-color: ${({ theme, type }) =>
-    type === 'confirm' ? theme.colors.green300 : theme.colors.purple};
+    type === 'confirm' ? theme.colors.green300 : theme.colors.red};
   width: 100%;
   height: 46px;
+  margin-bottom: 32px;
   align-items: center;
   justify-content: center;
 `;

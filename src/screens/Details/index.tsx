@@ -37,12 +37,13 @@ export function Details({ navigation, route }) {
     <Container>
       <HeaderDefault
         title={'Evento'}
-        onPressBag={() => navigation.navigate('Tickets')}
+        onPressBag={() => navigation.navigate('Cart')}
       />
-      <ImageParty>
-        <CardThumbnail source={{ uri: event.thumbnail }} />
-      </ImageParty>
-      <Card>
+      <Card showsVerticalScrollIndicator={true}>
+        <ImageParty>
+          <CardThumbnail source={{ uri: event.thumbnail }} />
+        </ImageParty>
+
         <Event>{event.eventLocal}</Event>
         <EventName>{event.eventAttraction}</EventName>
         <BoxCard>
@@ -52,7 +53,10 @@ export function Details({ navigation, route }) {
               size={18}
               color={theme.colors.gray50}
             />
-            <Date>{formatDateInDayMonthAndHour(event.dateTime)}</Date>
+            <Date>
+              {formatDateInDayMonthAndHour(event.dateTime)}
+              {'h'}
+            </Date>
           </DateTime>
         </BoxCard>
         <Detail>Detalhes</Detail>

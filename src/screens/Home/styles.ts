@@ -25,13 +25,10 @@ export const Footer = styled.TouchableOpacity`
   margin: 24px;
 `;
 
-export const Ticket = styled.Image`
-  margin-right: 16px;
-`;
-
 export const FooterText = styled.Text`
   color: ${({ theme }) => theme.colors.green100};
   font-size: 14px;
+  padding: 4px;
 `;
 
 export const FooterContactor = styled.View`
