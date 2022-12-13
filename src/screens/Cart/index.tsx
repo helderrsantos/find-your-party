@@ -30,7 +30,7 @@ export function Cart({ navigation }) {
           <Ionicons name="ios-chevron-back" size={24} color="white" />
         </Box>
         <EventTitle>{'Carrinho de compras'}</EventTitle>
-        <Bag />
+        <Bag onPress={() => navigation.navigate('Cart')} />
       </Header>
       <Card>
         <Event>{'teste'}</Event>

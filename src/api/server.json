@@ -1,14 +1,65 @@
 {
-    "events" : [
+  "events" : [
       {
         "id": "db8dbc59-250c-4614-9319-3da664927acf",
         "eventLocal": "Shed Club",
         "thumbnail": "https://www.bcnoticias.com.br/wp-content/uploads/2021/10/shed.jpg", 
         "eventAttraction": "Rodrigo Valentin e banda",
-        "dateTime": "2022-12-10T22:01:08.851Z", 
+        "dateTime": "2022-12-10T21:00:00.000Z", 
         "ticket_price": 250,
+        "category": "clubbing",
         "description": "A Shed Club tem capacidade para festas com até 1.000 pessoas. O espaço tem uma area especifica para fumantes, salão no piso térreo e no segundo piso, além de uma fantástica vista para o mar e cozinha de apoio para eventos privativos"
+      },
+      {
+        "id": "6ba193eb-9812-4004-ae74-45dfc7b15f35",
+        "eventLocal": "Warung Beach Club",
+        "thumbnail": "https://lokonafesta.com.br/wp-content/uploads/2019/07/warung-beach-club-special.jpg", 
+        "eventAttraction": "Gui Boratto + ZAC",
+        "dateTime": "2022-12-11T22:00:00.000Z", 
+        "ticket_price": 150,
+        "category": "clubbing",
+        "description": "Boate iluminada por neon com decoração de inspiração balinesa e playlist eletrônica, famosa pela vista do nascer do sol."
+      },
+      {
+        "id": "258fcc89-6b3c-42e8-87e4-87f6ba475702",
+        "eventLocal": "Local do evento",
+        "thumbnail": "imagem do evento", 
+        "eventAttraction": "Atração do evento",
+        "dateTime": "2022-12-10T22:01:08.851Z", 
+        "ticket_price": 50,
+        "category": "shows",
+        "description": "Descrição do evento"
+      },
+      {
+        "id": "cf5c5226-7e2d-46d1-af5d-236620cbb5ae",
+        "eventLocal": "Local do evento",
+        "thumbnail": "imagem do evento", 
+        "eventAttraction": "Atração do evento",
+        "dateTime": "2022-12-10T22:01:08.851Z", 
+        "ticket_price": 50,
+        "category": "shows",
+        "description": "Descrição do evento"
+      },
+      {
+        "id": "fa23ecc3-5998-4d52-af5c-865bea4abda5",
+        "eventLocal": "Local do evento",
+        "thumbnail": "imagem do evento", 
+        "eventAttraction": "Atração do evento",
+        "dateTime": "2022-12-10T22:01:08.851Z", 
+        "ticket_price": 50,
+        "category": "theater",
+        "description": "Descrição do evento"
+      },
+      {
+        "id": "e057d436-5b3e-4b32-8c93-90c326e92193",
+        "eventLocal": "Local do evento",
+        "thumbnail": "imagem do evento", 
+        "eventAttraction": "Atração do evento",
+        "dateTime": "2022-12-10T22:01:08.851Z", 
+        "ticket_price": 50,
+        "category": "university",
+        "description": "Descrição do evento"
       }
     ],
-    "user_tickets": []
-  }
+  "user_tickets": []
+}

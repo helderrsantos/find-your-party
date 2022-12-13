@@ -54,6 +54,7 @@ export function Events({ navigation, route }) {
             }
             buttonTitle={'Comprar ingresso'}
             type={'confirm'}
+            showButton={false}
           >
             <BoxCard>
               <DateTime>

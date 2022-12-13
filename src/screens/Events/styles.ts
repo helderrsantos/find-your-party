@@ -8,7 +8,13 @@ export const Container = styled.View`
 
 export const EventsList = styled(
   FlatList as new (
-    props: FlatListProps<{ id: string; eventLocal: string }>,
+    props: FlatListProps<{
+      ticket_price: number;
+      dateTime(dateTime: any): import('react').ReactNode;
+      eventAttraction: string;
+      id: string;
+      eventLocal: string;
+    }>,
   ) => FlatList<{
     id: string;
     eventLocal: string;

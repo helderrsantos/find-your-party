@@ -5,6 +5,7 @@ import { useTheme } from 'styled-components';
 
 import { CustomButton } from '../../components/CustomButton';
 import { HeaderDefault } from '../../components/Header';
+import { formatCurrencyBRL } from '../../utils/currency';
 import { formatDateInDayMonthAndHour } from '../../utils/date';
 import {
   Card,
@@ -46,7 +47,11 @@ export function Details({ navigation, route }) {
         <EventName>{event.eventAttraction}</EventName>
         <BoxCard>
           <DateTime>
-            <Ionicons name="time-outline" size={18} color="#7C7C8A" />
+            <Ionicons
+              name="time-outline"
+              size={18}
+              color={theme.colors.gray50}
+            />
             <Date>{formatDateInDayMonthAndHour(event.dateTime)}</Date>
           </DateTime>
         </BoxCard>
@@ -89,7 +94,7 @@ export function Details({ navigation, route }) {
           <ValuesText>
             <Detail>Total compra: </Detail>
           </ValuesText>
-          <Values>R$ {event.ticket_price},00</Values>
+          <Values>{formatCurrencyBRL(event.ticket_price)}</Values>
         </BoxValues>
         <CustomButton
           title="Comprar ingresso"
