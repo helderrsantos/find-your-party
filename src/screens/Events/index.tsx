@@ -1,33 +1,30 @@
 import React, { useEffect, useState } from 'react';
 
 import { Ionicons } from '@expo/vector-icons';
-import { FlatList } from 'react-native';
 
 import { api } from '../../api';
-import { Bag } from '../../components/Bag';
-import { CardButton } from '../../components/CardButton';
+import { EventCard } from '../../components/EventCard';
+import { HeaderDefault } from '../../components/Header';
+import { formatCurrencyBRL } from '../../utils/currency';
+import { formatDateInDayMonthAndHour } from '../../utils/date';
 import {
-  Card,
   Container,
-  Event,
-  EventName,
   Date,
   IconMoney,
   Cash,
   Price,
   DateTime,
-  Box,
-  EventTitle,
-  Header,
   BoxCard,
+  EventsList,
 } from './styles';
 
-export function Events({ navigation }) {
+export function Events({ navigation, route }) {
   const [events, setEvents] = useState([]);
+  const { category } = route.params;
 
   async function fetchEvents() {
     try {
-      const response = await api.get('/events');
+      const response = await api.get(`/events?category=${category}`);
 
       setEvents(response.data);
       console.log(response.data);
@@ -35,42 +32,40 @@ export function Events({ navigation }) {
       console.log(error);
     }
   }
-
   useEffect(() => {
     fetchEvents();
   }, []);
 
   return (
     <Container>
-      <Header>
-        <Box onPress={() => navigation.goBack()}>
-          <Ionicons name="ios-chevron-back" size={24} color="white" />
-        </Box>
-        <EventTitle>{'Balada'}</EventTitle>
-        <Bag onPress={() => navigation.navigate('Cart')} />
-      </Header>
-      <FlatList
+      <HeaderDefault
+        title={'Eventos'}
+        onPressBag={() => navigation.navigate('Tickets')}
+      />
+      <EventsList
         data={events}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
-          <Card>
-            <Event>{item.eventLocal}</Event>
-            <EventName>{item.eventAttraction}</EventName>
+          <EventCard
+            eventLocal={item.eventLocal}
+            eventAttraction={item.eventAttraction}
+            onPressButton={() =>
+              navigation.navigate('Details', { event: item })
+            }
+            buttonTitle={'Comprar ingresso'}
+            type={'confirm'}
+          >
             <BoxCard>
               <DateTime>
                 <Ionicons name="time-outline" size={18} color="#7C7C8A" />
-                <Date>{item.dateTime}</Date>
+                <Date>{formatDateInDayMonthAndHour(item.dateTime)}</Date>
               </DateTime>
               <Cash>
                 <IconMoney source={require('../../assets/cash.png')} />
-                <Price>R${item.ticket_price},00</Price>
+                <Price>{formatCurrencyBRL(item.ticket_price)}</Price>
               </Cash>
             </BoxCard>
-            <CardButton
-              title="Comprar ingresso"
-              onPress={() => navigation.navigate('Details')}
-            />
-          </Card>
+          </EventCard>
         )}
       />
     </Container>

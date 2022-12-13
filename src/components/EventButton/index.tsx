@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TouchableOpacityProps } from 'react-native';
 
-import { Button, Container, TitleButton } from './styles';
+import { Container, TitleButton } from './styles';
 
 type Props = TouchableOpacityProps & {
   title: string;
@@ -11,10 +11,8 @@ type Props = TouchableOpacityProps & {
 
 export function EventButton({ title, ...rest }: Props) {
   return (
-    <Container>
-      <Button {...rest}>
-        <TitleButton>{title}</TitleButton>
-      </Button>
+    <Container {...rest}>
+      <TitleButton>{title}</TitleButton>
     </Container>
   );
 }

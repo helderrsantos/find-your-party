@@ -5,17 +5,9 @@ export const Container = styled.View`
   flex: 1;
 `;
 
-export const Header = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 24px 16px;
-  align-items: flex-end;
-  background-color: ${({ theme }) => theme.colors.gray200};
-  height: 140px;
-  width: 100%;
-`;
-
-export const EventBox = styled.ScrollView``;
+export const EventBox = styled.ScrollView.attrs({
+  contentContainerStyle: { padding: 24 },
+})``;
 
 export const FooterMain = styled.View`
   flex-direction: row;

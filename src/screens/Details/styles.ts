@@ -17,7 +17,6 @@ export const Header = styled.View`
   padding: 24px 16px 10px 16px;
   align-items: flex-end;
   background-color: ${({ theme }) => theme.colors.gray200};
-  height: 126px;
 `;
 
 export const EventTitle = styled.Text`

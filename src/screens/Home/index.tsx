@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Background } from '../../components/Background';
 import { EventButton } from '../../components/EventButton';
-import { Title } from '../../components/Title';
+import { HeaderMain } from '../../components/Header';
 import {
   ContactorBox,
   Container,
@@ -12,32 +11,31 @@ import {
   FooterContactor,
   FooterMain,
   FooterText,
-  Header,
   Ticket,
 } from './styles';
 
 export function Home({ navigation }) {
+  const handleNavigation = category => {
+    return navigation.navigate('Events', { category });
+  };
   return (
     <Container>
-      <Header>
-        <Title />
-        <Background onPress={() => navigation.navigate('Cart')} />
-      </Header>
+      <HeaderMain onPressBag={() => navigation.navigate('Cart')} />
       <EventBox>
         <EventButton
-          onPress={() => navigation.navigate('Events')}
+          onPress={() => handleNavigation('clubbing')}
           title={'Balada'}
         />
         <EventButton
-          onPress={() => navigation.navigate('Events')}
+          onPress={() => handleNavigation('shows')}
           title={'Shows Nacionais'}
         />
         <EventButton
-          onPress={() => navigation.navigate('Events')}
+          onPress={() => handleNavigation('theater')}
           title={'Teatro'}
         />
         <EventButton
-          onPress={() => navigation.navigate('Events')}
+          onPress={() => handleNavigation('university')}
           title={'Universidade'}
         />
       </EventBox>
