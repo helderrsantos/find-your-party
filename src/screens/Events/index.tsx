@@ -23,15 +23,19 @@ export function Events({ navigation, route }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const { category } = route.params;
+  const headerTitle = {
+    clubbing: 'Balada',
+    shows: 'Shows nacionais',
+    theater: ' Teatro',
+    university: 'Universidade',
+  };
 
   async function fetchEvents() {
     try {
       const response = await api.get<IEventDTO[]>(
         `/events?category=${category}`,
       );
-
       setEvents(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     } finally {
@@ -40,12 +44,12 @@ export function Events({ navigation, route }) {
   }
   useEffect(() => {
     fetchEvents();
-  });
+  }, []);
 
   return (
     <Container>
       <HeaderDefault
-        title={'Eventos'}
+        title={headerTitle[category]}
         onPressBag={() => navigation.navigate('Cart')}
       />
       {loading ? (

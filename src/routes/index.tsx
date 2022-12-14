@@ -3,6 +3,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import { ParamList } from '../@types/navigation';
 import { Cart } from '../screens/Cart';
 import { Details } from '../screens/Details';
 import { Events } from '../screens/Events';
@@ -10,7 +11,7 @@ import { Home } from '../screens/Home';
 import { Tickets } from '../screens/Tickets';
 
 const { Navigator: NavigatorStack, Screen: StackScreen } =
-  createStackNavigator();
+  createStackNavigator<ParamList>();
 
 function Routes() {
   return (

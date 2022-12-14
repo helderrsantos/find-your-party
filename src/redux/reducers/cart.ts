@@ -29,11 +29,9 @@ export const cartSlice = createSlice({
       state.tickets.push(action.payload);
     },
     removeTicket: (state, action: PayloadAction<Pick<ITicketCart, 'id'>>) => {
-      const ticketsFiltrados = state.tickets.filter(
+      state.tickets = state.tickets.filter(
         ticket => ticket.id !== action.payload.id,
       );
-
-      state.tickets = ticketsFiltrados;
     },
   },
 });

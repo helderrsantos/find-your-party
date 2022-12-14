@@ -5,25 +5,6 @@ export const Container = styled.View`
   flex: 1;
 `;
 
-export const Box = styled.Pressable`
-  width: 20px;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const Header = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 24px 16px 10px 16px;
-  align-items: flex-end;
-  background-color: ${({ theme }) => theme.colors.gray200};
-`;
-
-export const EventTitle = styled.Text`
-  font-size: 20px;
-  color: ${({ theme }) => theme.colors.white200};
-  font-family: ${({ theme }) => theme.fonts.text600};
-`;
 export const CardThumbnail = styled.ImageBackground`
   background-color: ${({ theme }) => theme.colors.white100};
   height: 199px;
@@ -40,7 +21,7 @@ export const Card = styled.ScrollView`
 export const Event = styled.Text`
   font-size: 20px;
   width: 100%;
-  height: 32px;
+  margin-top: 21px;
   color: ${({ theme }) => theme.colors.white200};
   font-family: ${({ theme }) => theme.fonts.text600};
 `;
@@ -51,21 +32,11 @@ export const EventName = styled.Text`
   font-family: ${({ theme }) => theme.fonts.text400};
 `;
 
-export const DateTime = styled.Text`
-  width: 100%;
-  height: 24px;
-`;
 export const BoxCard = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 8px 0px 24px 0px;
-`;
-
-export const Date = styled.Text`
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.white200};
-  font-family: ${({ theme }) => theme.fonts.text400};
 `;
 
 export const Detail = styled.Text`
@@ -104,7 +75,7 @@ export const Contactor = styled.View`
   align-items: center;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const Button = styled.Pressable`
   background-color: ${({ theme }) => theme.colors.green300};
   width: 52px;
   height: 52px;

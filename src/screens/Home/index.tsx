@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Entypo } from '@expo/vector-icons';
+import { useTheme } from 'styled-components';
 
 import { EventButton } from '../../components/EventButton';
 import { HeaderMain } from '../../components/Header';
@@ -16,9 +17,11 @@ import {
 } from './styles';
 
 export function Home({ navigation }) {
+  const theme = useTheme();
   const handleNavigation = category => {
     return navigation.navigate('Events', { category });
   };
+
   return (
     <Container>
       <HeaderMain onPressBag={() => navigation.navigate('Cart')} />
@@ -43,7 +46,7 @@ export function Home({ navigation }) {
 
       <FooterMain>
         <Footer onPress={() => navigation.navigate('Tickets')}>
-          <Entypo name="ticket" size={18} color="green" />
+          <Entypo name="ticket" size={18} color={theme.colors.green100} />
           <FooterText>Meus Ingressos</FooterText>
         </Footer>
         <FooterContactor>

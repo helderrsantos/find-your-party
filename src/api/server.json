@@ -6,14 +6,14 @@
         "thumbnail": "https://www.bcnoticias.com.br/wp-content/uploads/2021/10/shed.jpg", 
         "eventAttraction": "Rodrigo Valentin e banda",
         "dateTime": "2022-12-10T21:00:00.000Z", 
-        "ticket_price": 250,
+        "ticket_price": 100,
         "category": "clubbing",
         "description": "A Shed Club tem capacidade para festas com até 1.000 pessoas. O espaço tem uma area especifica para fumantes, salão no piso térreo e no segundo piso, além de uma fantástica vista para o mar e cozinha de apoio para eventos privativos"
       },
       {
         "id": "6ba193eb-9812-4004-ae74-45dfc7b15f35",
         "eventLocal": "Warung Beach Club",
-        "thumbnail": "https://lokonafesta.com.br/wp-content/uploads/2019/07/warung-beach-club-special.jpg", 
+        "thumbnail": "https://beatforbeat.com.br/site/wp-content/uploads/2019/11/Warung.jpg", 
         "eventAttraction": "Gui Boratto + ZAC",
         "dateTime": "2022-12-11T22:00:00.000Z", 
         "ticket_price": 150,
@@ -22,43 +22,43 @@
       },
       {
         "id": "258fcc89-6b3c-42e8-87e4-87f6ba475702",
-        "eventLocal": "Local do evento",
-        "thumbnail": "imagem do evento", 
-        "eventAttraction": "Atração do evento",
+        "eventLocal": "Belvedere",
+        "thumbnail": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2021/04/30232954/Menos-e-Mais-EP2-Creditos-Ricardo-Ribeiro-1.jpg", 
+        "eventAttraction": "Grupo Menos é Mais",
         "dateTime": "2022-12-10T22:01:08.851Z", 
-        "ticket_price": 50,
+        "ticket_price": 120,
         "category": "shows",
-        "description": "Descrição do evento"
+        "description": "Menos é Mais é um grupo de pagode formado em 2017 na cidade de Brasília por Duzão, Gustavo Góes, Jorge Farias, Paulinho Félix e Ramon Alvarenga. O grupo ganhou notoriedade por regravar faixas antigas de sucesso de outros cantores. Em 2021, o Menos é Mais lançou Plano Piloto, primeiro álbum com músicas autorais."
       },
       {
         "id": "cf5c5226-7e2d-46d1-af5d-236620cbb5ae",
-        "eventLocal": "Local do evento",
-        "thumbnail": "imagem do evento", 
-        "eventAttraction": "Atração do evento",
+        "eventLocal": "Music Park",
+        "thumbnail": "https://akamai.sscdn.co/uploadfile/letras/fotos/6/4/e/0/64e02ba675aa7ec22bac569f87f23190.jpg", 
+        "eventAttraction": "Jorge & Mateus",
         "dateTime": "2022-12-10T22:01:08.851Z", 
         "ticket_price": 50,
         "category": "shows",
-        "description": "Descrição do evento"
+        "description": "Precursores do sertanejo universitário, Jorge & Mateus lançaram seu álbum de estreia em 2007, Ao Vivo em Goiânia, produzido por Pinocchio, que alcançou popularidade no país através das canções Pode Chorar, De Tanto Te Querer e Tem Nada a Ver, o que fez a dupla investir em outros trabalhos ao vivo, que fortaleceram sua notoriedade"
       },
       {
         "id": "fa23ecc3-5998-4d52-af5c-865bea4abda5",
-        "eventLocal": "Local do evento",
-        "thumbnail": "imagem do evento", 
-        "eventAttraction": "Atração do evento",
+        "eventLocal": "Teatro Carlos Gomes",
+        "thumbnail": "https://www.diariodepernambuco.com.br/static/app/noticia_127983242361/2020/12/29/849010/20201229164409568049o.jpg", 
+        "eventAttraction": "Romeu e Julieta",
         "dateTime": "2022-12-10T22:01:08.851Z", 
         "ticket_price": 50,
         "category": "theater",
-        "description": "Descrição do evento"
+        "description": "Romeu Montecchio e Julieta Capuleto protagonizam o romance trágico Romeu e Julieta, que é uma masterpiece de Shakespeare. Aqui, a rivalidade entre as famílias de Verona é o pano de fundo da peça que inspirou diversas adaptações de Literatura, Cinema e Música."
       },
       {
         "id": "e057d436-5b3e-4b32-8c93-90c326e92193",
-        "eventLocal": "Local do evento",
-        "thumbnail": "imagem do evento", 
-        "eventAttraction": "Atração do evento",
+        "eventLocal": "Univali",
+        "thumbnail": "https://www.showmetech.com.br/wp-content/uploads//2021/12/E3Floor03-1.jpg", 
+        "eventAttraction": "Rocketseat",
         "dateTime": "2022-12-10T22:01:08.851Z", 
         "ticket_price": 50,
         "category": "university",
-        "description": "Descrição do evento"
+        "description": "Trata-se de um evento técnico científico que reune anualmente a comunidade da área de computação para discutir o cenário e as tendências de pesquisa e mercado da computação em suas mais diversas áreas."
       }
     ],
   "user_tickets": []

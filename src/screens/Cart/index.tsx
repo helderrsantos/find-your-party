@@ -1,90 +1,94 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import {
-  Ionicons,
   AntDesign,
-  Fontisto,
   Entypo,
   FontAwesome5,
+  Fontisto,
+  Ionicons,
 } from '@expo/vector-icons';
 import { Alert } from 'react-native';
+import { useTheme } from 'styled-components';
 
-import { api } from '../../api';
 import { CustomButton } from '../../components/CustomButton';
 import { EventCard } from '../../components/EventCard';
 import { HeaderDefault } from '../../components/Header';
+import { InlineText } from '../../components/InlineText';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { removeTicket } from '../../redux/reducers/cart';
 import { formatCurrencyBRL } from '../../utils/currency';
 import { formatDateInDayMonthAndHour } from '../../utils/date';
 import {
   BoxButton,
   BoxCard,
   BoxValues,
-  Cash,
   Container,
-  Date,
   Detail,
   EventsList,
-  Price,
-  TicketValue,
-  User,
   Values,
   ValuesText,
 } from './styles';
 
 export function Cart() {
-  const [events, setEvents] = useState([]);
-  async function fetchEvents() {
-    try {
-      const response = await api.get('/events');
+  const tickets = useAppSelector(state => state.cart.tickets);
+  const dispatch = useAppDispatch();
+  const theme = useTheme();
+  const iconConfig = {
+    color: theme.colors.green100,
+    size: 18,
+  };
 
-      setEvents(response.data);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+  const totalAmount = tickets.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.amount,
+    0,
+  );
+
+  function handleDelete(id: string) {
+    dispatch(removeTicket({ id }));
   }
-  useEffect(() => {
-    fetchEvents();
-  }, []);
+
   return (
     <Container>
       <HeaderDefault title={'Carrinho de compras'} onPressBag={() => {}} />
       <EventsList
-        data={events}
+        data={tickets}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <EventCard
-            eventLocal={item.eventLocal}
-            eventAttraction={item.eventAttraction}
-            onPressButton={() => {}}
+            eventLocal={item.event.eventLocal}
+            eventAttraction={item.event.eventAttraction}
+            onPressButton={() => handleDelete(item.id)}
             buttonTitle={'Remover ingresso'}
             type={'delete'}
             showButton
           >
-            <User>
-              <Ionicons name="time-outline" size={18} color="#7C7C8A" />
-              <Date>
-                {formatDateInDayMonthAndHour(item.dateTime)}
-                {'h'}
-              </Date>
-            </User>
-            <User>
-              <AntDesign name="user" size={18} color="green" />
-              <Date>{'User'}</Date>
-            </User>
-            <User>
-              <Fontisto name="email" size={18} color="green" />
-              <Date>{'Email'}</Date>
-            </User>
+            <InlineText
+              icon={
+                <Ionicons
+                  name="time-outline"
+                  {...iconConfig}
+                  color={theme.colors.gray50}
+                />
+              }
+            >
+              {`${formatDateInDayMonthAndHour(item.event.dateTime)}h`}
+            </InlineText>
+            <InlineText icon={<AntDesign name="user" {...iconConfig} />}>
+              {item.comprador.name}
+            </InlineText>
+            <InlineText icon={<Fontisto name="email" {...iconConfig} />}>
+              {item.comprador.email}
+            </InlineText>
             <BoxCard>
-              <TicketValue>
-                <Entypo name="ticket" size={18} color="green" />
-                <Date>{2} unidades</Date>
-              </TicketValue>
-              <Cash>
-                <FontAwesome5 name="money-bill-alt" size={18} color="green" />
-                <Price>{formatCurrencyBRL(item.ticket_price)}</Price>
-              </Cash>
+              <InlineText icon={<Entypo name="ticket" {...iconConfig} />}>
+                {`${item.tickets} unidades`}
+              </InlineText>
+              <InlineText
+                icon={<FontAwesome5 name="money-bill-alt" {...iconConfig} />}
+              >
+                {formatCurrencyBRL(item.event.ticket_price)}
+              </InlineText>
             </BoxCard>
           </EventCard>
         )}
@@ -93,7 +97,7 @@ export function Cart() {
         <ValuesText>
           <Detail>Total carrinho: </Detail>
         </ValuesText>
-        <Values>{formatCurrencyBRL(50)}</Values>
+        <Values>{formatCurrencyBRL(totalAmount)}</Values>
       </BoxValues>
       <BoxButton>
         <CustomButton

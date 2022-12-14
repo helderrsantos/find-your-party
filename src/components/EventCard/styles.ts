@@ -20,7 +20,3 @@ export const EventName = styled.Text`
   color: ${({ theme }) => theme.colors.white200};
   font-family: ${({ theme }) => theme.fonts.text400};
 `;
-
-export const DateTime = styled.View`
-  flex-direction: row;
-`;
