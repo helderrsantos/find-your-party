@@ -3,7 +3,7 @@ export interface IEventDTO {
   eventLocal: string;
   thumbnail: string;
   eventAttraction: string;
-  dateTime: number;
+  dateTime: string;
   ticket_price: number;
   category: string;
   description: string;
