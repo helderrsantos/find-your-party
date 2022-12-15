@@ -7,16 +7,21 @@ import {
   Fontisto,
   Ionicons,
 } from '@expo/vector-icons';
-import { Alert } from 'react-native';
+import uuid from 'react-native-uuid';
 import { useTheme } from 'styled-components';
 
+import { api } from '../../api';
 import { CustomButton } from '../../components/CustomButton';
 import { EventCard } from '../../components/EventCard';
 import { HeaderDefault } from '../../components/Header';
 import { InlineText } from '../../components/InlineText';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useAppSelector } from '../../hooks/useAppSelector';
-import { removeTicket } from '../../redux/reducers/cart';
+import {
+  ITicketCart,
+  removeTicket,
+  resetCart,
+} from '../../redux/reducers/cart';
 import { formatCurrencyBRL } from '../../utils/currency';
 import { formatDateInDayMonthAndHour } from '../../utils/date';
 import {
@@ -30,8 +35,16 @@ import {
   ValuesText,
 } from './styles';
 
-export function Cart() {
+export interface IUserTickets {
+  id: string;
+  user_id: string;
+  buy_at: string;
+  tickets: ITicketCart[];
+  amount_tickets: number;
+}
+export function Cart({ navigation }) {
   const tickets = useAppSelector(state => state.cart.tickets);
+  const userId = useAppSelector(state => state.user.id);
   const dispatch = useAppDispatch();
   const theme = useTheme();
   const iconConfig = {
@@ -46,6 +59,25 @@ export function Cart() {
 
   function handleDelete(id: string) {
     dispatch(removeTicket({ id }));
+  }
+
+  async function handleFinish() {
+    try {
+      await api.post<IUserTickets>('/user_tickets', {
+        id: String(uuid.v4()),
+        user_id: userId,
+        buy_at: new Date(),
+        tickets,
+        amount_tickets: tickets.reduce(
+          (accumulator, currentValue) => accumulator + currentValue.tickets,
+          0,
+        ),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    navigation.navigate('Home');
+    dispatch(resetCart());
   }
 
   return (
@@ -100,10 +132,7 @@ export function Cart() {
         <Values>{formatCurrencyBRL(totalAmount)}</Values>
       </BoxValues>
       <BoxButton>
-        <CustomButton
-          onPress={() => Alert.alert('Compra realizada com sucesso')}
-          title={'Finalizar compra'}
-        />
+        <CustomButton onPress={handleFinish} title={'Finalizar compra'} />
       </BoxButton>
     </Container>
   );

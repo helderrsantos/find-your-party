@@ -33,8 +33,11 @@ export const cartSlice = createSlice({
         ticket => ticket.id !== action.payload.id,
       );
     },
+    resetCart: state => {
+      state.tickets = [];
+    },
   },
 });
 
-export const { addNewTicket, removeTicket } = cartSlice.actions;
+export const { addNewTicket, removeTicket, resetCart } = cartSlice.actions;
 export const { reducer: CartReducer } = cartSlice;

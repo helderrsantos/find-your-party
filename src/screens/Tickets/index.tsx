@@ -5,13 +5,12 @@ import { Ionicons, FontAwesome5, Entypo } from '@expo/vector-icons';
 import { EventCard } from '../../components/EventCard';
 import { HeaderDefault } from '../../components/Header';
 import { InlineText } from '../../components/InlineText';
-import { useAppSelector } from '../../hooks/useAppSelector';
 import { formatCurrencyBRL } from '../../utils/currency';
 import { formatDateInDayMonthAndHour } from '../../utils/date';
 import { BoxCard, Cash, Container, EventsList } from './styles';
 
-export function Tickets({ navigation }) {
-  const tickets = useAppSelector(state => state.cart.tickets);
+export function Tickets({ navigation, route }) {
+  const { tickets } = route.params;
 
   return (
     <Container>
@@ -20,7 +19,7 @@ export function Tickets({ navigation }) {
         onPressBag={() => navigation.navigate('Cart')}
       />
       <EventsList
-        data={tickets}
+        data={tickets.flatMap(ticket => ticket.tickets)}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <EventCard
