@@ -17,6 +17,7 @@ import theme from './global/styles';
 import store from './redux/store';
 import Routes from './routes';
 
+if (__DEV__) require('./config/reactotron');
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
