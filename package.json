@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "api": "json-server ./src/api/server.json"
+    "api": "json-server ./src/api/db.json"
   },
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.2.2",
