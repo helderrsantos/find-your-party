@@ -38,6 +38,11 @@ export function Details({ navigation, route }) {
   const [email, setEmail] = useState('');
   const dispatch = useAppDispatch();
   const theme = useTheme();
+  const iconConfig = {
+    color: theme.colors.white100,
+    size: 16,
+    style: { margin: 18 },
+  };
 
   function increment() {
     setCount(prevState => prevState + 1);
@@ -107,23 +112,13 @@ export function Details({ navigation, route }) {
         <Detail>Quantidade</Detail>
         <Amount>
           <Button onPress={decrement}>
-            <Ionicons
-              name="remove-circle-outline"
-              size={16}
-              color="white"
-              style={{ margin: 18 }}
-            />
+            <Ionicons name="remove-circle-outline" {...iconConfig} />
           </Button>
           <Contactor>
             <Counter>{count}</Counter>
           </Contactor>
           <Button onPress={increment}>
-            <Ionicons
-              name="add-circle-outline"
-              size={16}
-              color="white"
-              style={{ margin: 18 }}
-            />
+            <Ionicons name="add-circle-outline" {...iconConfig} />
           </Button>
         </Amount>
         <BoxValues>
