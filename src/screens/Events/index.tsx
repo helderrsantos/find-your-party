@@ -23,6 +23,7 @@ export function Events({ navigation, route }) {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const { category } = route.params;
+
   const headerTitle = {
     clubbing: 'Balada',
     shows: 'Shows nacionais',

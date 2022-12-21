@@ -1,0 +1,34 @@
+{
+    "translation":{
+        "HomeScreen":{
+        "Balada":"Clubbing",
+        "Shows Nacionais":"Shows",
+        "Teatro": "Theater",
+        "Universidade":"University",
+        "Meus Ingressos": "My Tickets"        
+    },
+    "EventScreen":{
+        "Comprar ingresso": "Buy ticket"
+    },
+    "DetailsScreen":{
+        "Evento": "Event",
+        "Detalhes":"Details",
+        "Dados do titular":"Holder data",
+        "Nome Completo": "Full Name",
+        "Quantidade":"Amount",
+        "Total compra": "Total Purchase",
+        "Comprar ingresso": "Buy ticket"
+    },
+    "CartScreen":{
+        "Carrinho de compras": "Shopping Cart",
+        "unidades": "units",
+        "Remover ingresso": "Remove ticket",
+        "Total carrinho": "Total cart",
+        "Finalizar compra":"Checkout"
+    },
+    "TicketsScreen":{
+        "Meus ingressos": "My tickets",
+        "unidades":"units"
+    }
+}
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
+import '../../translation/i18next';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import uuid from 'react-native-uuid';
 import { useTheme } from 'styled-components';
 
@@ -37,6 +39,7 @@ export function Details({ navigation, route }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   const theme = useTheme();
   const iconConfig = {
     color: theme.colors.white100,
@@ -69,7 +72,7 @@ export function Details({ navigation, route }) {
   return (
     <Container>
       <HeaderDefault
-        title={'Evento'}
+        title={t('DetailsScreen.Evento')}
         onPressBag={() => navigation.navigate('Cart')}
       />
       <Card showsVerticalScrollIndicator={true}>
@@ -92,13 +95,13 @@ export function Details({ navigation, route }) {
             {`${formatDateInDayMonthAndHour(event.dateTime)} h`}
           </InlineText>
         </BoxCard>
-        <Detail>Detalhes</Detail>
+        <Detail>{t('DetailsScreen.Detalhes')}</Detail>
         <Description>{event.description}</Description>
-        <Detail>Dados do titular</Detail>
+        <Detail>{t('DetailsScreen.Dados do titular')}</Detail>
         <Input
           onChangeText={setName}
           value={name}
-          placeholder="Nome Completo"
+          placeholder={t('DetailsScreen.Nome Completo')}
           placeholderTextColor={theme.colors.gray50}
           maxLength={40}
         />
@@ -109,7 +112,7 @@ export function Details({ navigation, route }) {
           placeholderTextColor={theme.colors.gray50}
           maxLength={40}
         />
-        <Detail>Quantidade</Detail>
+        <Detail>{t('DetailsScreen.Quantidade')}</Detail>
         <Amount>
           <Button onPress={decrement}>
             <Ionicons name="remove-circle-outline" {...iconConfig} />
@@ -123,7 +126,7 @@ export function Details({ navigation, route }) {
         </Amount>
         <BoxValues>
           <ValuesText>
-            <Detail>Total compra: </Detail>
+            <Detail>{t('DetailsScreen.Total compra')} :</Detail>
           </ValuesText>
           <Values>{formatCurrencyBRL(event.ticket_price * count)}</Values>
         </BoxValues>

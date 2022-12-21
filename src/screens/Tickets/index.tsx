@@ -1,6 +1,8 @@
 import React from 'react';
+import '../../translation/i18next';
 
 import { Ionicons, FontAwesome5, Entypo } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 import { EventCard } from '../../components/EventCard';
 import { HeaderDefault } from '../../components/Header';
@@ -11,11 +13,12 @@ import { BoxCard, Cash, Container, EventsList } from './styles';
 
 export function Tickets({ navigation, route }) {
   const { tickets } = route.params;
+  const { t } = useTranslation();
 
   return (
     <Container>
       <HeaderDefault
-        title={'Meus ingressos'}
+        title={t('TicketsScreen.Meus ingressos')}
         onPressBag={() => navigation.navigate('Cart')}
       />
       <EventsList

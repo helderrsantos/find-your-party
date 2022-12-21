@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../translation/i18next';
+
 import {
   AntDesign,
   Entypo,
@@ -7,6 +9,7 @@ import {
   Fontisto,
   Ionicons,
 } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import uuid from 'react-native-uuid';
 import { useTheme } from 'styled-components';
 
@@ -46,6 +49,7 @@ export function Cart({ navigation }) {
   const tickets = useAppSelector(state => state.cart.tickets);
   const userId = useAppSelector(state => state.user.id);
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   const theme = useTheme();
   const iconConfig = {
     color: theme.colors.green100,
@@ -82,7 +86,10 @@ export function Cart({ navigation }) {
 
   return (
     <Container>
-      <HeaderDefault title={'Carrinho de compras'} onPressBag={() => {}} />
+      <HeaderDefault
+        title={t('CartScreen.Carrinho de compras')}
+        onPressBag={() => {}}
+      />
       <EventsList
         data={tickets}
         keyExtractor={item => item.id}
@@ -91,7 +98,7 @@ export function Cart({ navigation }) {
             eventLocal={item.event.eventLocal}
             eventAttraction={item.event.eventAttraction}
             onPressButton={() => handleDelete(item.id)}
-            buttonTitle={'Remover ingresso'}
+            buttonTitle={t('CartScreen.Remover ingresso')}
             type={'delete'}
             showButton
           >
@@ -127,12 +134,15 @@ export function Cart({ navigation }) {
       />
       <BoxValues>
         <ValuesText>
-          <Detail>Total carrinho: </Detail>
+          <Detail>{t('CartScreen.Total carrinho')} :</Detail>
         </ValuesText>
         <Values>{formatCurrencyBRL(totalAmount)}</Values>
       </BoxValues>
       <BoxButton>
-        <CustomButton onPress={handleFinish} title={'Finalizar compra'} />
+        <CustomButton
+          onPress={handleFinish}
+          title={t('CartScreen.Finalizar compra')}
+        />
       </BoxButton>
     </Container>
   );

@@ -1,0 +1,34 @@
+{
+    "translation":{
+        "HomeScreen":{
+        "Balada":"Balada",
+        "Shows Nacionais":"Shows Nacionais",
+        "Teatro": "Teatro",
+        "Universidade":"Universidade",
+        "Meus Ingressos": "Meus Ingressos"        
+    },
+    "EventScreen":{
+        "Comprar ingresso": "Comprar ingresso"
+    },
+    "DetailsScreen":{
+        "Evento": "Evento",
+        "Detalhes":"Detalhes",
+        "Dados do titular":"Dados do titular",
+        "Nome Completo": "Nome Completo",
+        "Quantidade":"Quantidade",
+        "Total compra": "Total Compra",
+        "Comprar ingresso": "Comprar ingresso"
+    },
+    "CartScreen":{
+        "Carrinho de compras": "Carrinho de compras",
+        "unidades": "unidades",
+        "Remover ingresso": "Remover Ingresso",
+        "Total carrinho": "Total carrinho",
+        "Finalizar compra":"Finalizar compra"
+    },
+    "TicketsScreen":{
+        "Meus ingressos": "Meus ingressos",
+        "unidades":"unidades"
+    }
+}
+}
