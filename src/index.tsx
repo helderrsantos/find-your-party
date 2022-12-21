@@ -41,7 +41,7 @@ export default function App() {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <SafeAreaView
-          style={{ flex: 1, backgroundColor: '#29292E' }}
+          style={{ flex: 1, backgroundColor: '#202024' }}
           onLayout={onLayoutRootView}
         >
           <Routes />

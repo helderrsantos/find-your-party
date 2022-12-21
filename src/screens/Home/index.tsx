@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+import '../../translation/i18next';
 import { Entypo } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 
 import { api } from '../../api';
@@ -23,6 +25,7 @@ export function Home({ navigation }) {
   const [tickets, setTickets] = useState<IUserTickets[]>([]);
   const userId = useAppSelector(state => state.user.id);
   const theme = useTheme();
+  const { t } = useTranslation();
   const handleNavigation = category => {
     return navigation.navigate('Events', { category });
   };
@@ -42,7 +45,7 @@ export function Home({ navigation }) {
   }
   useEffect(() => {
     fetchMyTickets();
-  }, []);
+  });
 
   return (
     <Container>
@@ -50,26 +53,26 @@ export function Home({ navigation }) {
       <EventBox>
         <EventButton
           onPress={() => handleNavigation('clubbing')}
-          title={'Balada'}
+          title={t('HomeScreen.Balada')}
         />
         <EventButton
           onPress={() => handleNavigation('shows')}
-          title={'Shows Nacionais'}
+          title={t('HomeScreen.Shows Nacionais')}
         />
         <EventButton
           onPress={() => handleNavigation('theater')}
-          title={'Teatro'}
+          title={t('HomeScreen.Teatro')}
         />
         <EventButton
           onPress={() => handleNavigation('university')}
-          title={'Universidade'}
+          title={t('HomeScreen.Universidade')}
         />
       </EventBox>
 
       <FooterMain>
         <Footer onPress={() => navigation.navigate('Tickets', { tickets })}>
           <Entypo name="ticket" size={18} color={theme.colors.green100} />
-          <FooterText>Meus Ingressos</FooterText>
+          <FooterText>{t('HomeScreen.Meus Ingressos')}</FooterText>
         </Footer>
         <FooterContactor>
           <ContactorBox>
