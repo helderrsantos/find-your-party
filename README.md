@@ -1,5 +1,5 @@
 ## 💻 Projeto
-Desafio técnico para empresa MB Labs. Aplicativo para comprar ingressos de eventos, universidades, teatro e shows. 
+Aplicativo para comprar ingressos de eventos, universidades, teatro e shows. 
 
 ## ⚡️ Features
 
