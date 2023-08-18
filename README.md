@@ -1,4 +1,4 @@
-## 💻 Projeto
+## 💻 Projeto Find Your Party
 Aplicativo para comprar ingressos de eventos, universidades, teatro e shows. 
 
 ## ⚡️ Features
@@ -28,3 +28,7 @@ Aplicativo para comprar ingressos de eventos, universidades, teatro e shows.
 -   [ ] ESLint
 -   [ ] Prettier
 -   [ ] Reactotron
+
+<div align="center">
+  <small>Desenvolvido por Helder Santos</small>
+</div>
